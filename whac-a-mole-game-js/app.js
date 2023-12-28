@@ -1,7 +1,7 @@
-const squares = document.querySelectorAll('.square');
-const mole = document.querySelector('.mole');
-const scoreDisplay = document.getElementById('score');
-const timeDisplay = document.getElementById('time-left');
+const squares = document.querySelectorAll(".square");
+const mole = document.querySelector(".mole");
+const scoreDisplay = document.getElementById("score");
+const timeDisplay = document.getElementById("time-left");
 
 let result = 0;
 let hitPosition;
@@ -9,17 +9,17 @@ let currentTime = 20;
 let timerId = null;
 
 function randomSquare() {
-    squares.forEach(squ => squ.classList.remove('mole'));
+    squares.forEach((squ) => squ.classList.remove("mole"));
 
     let randomSquare = squares[Math.floor(Math.random() * squares.length)];
 
-    randomSquare.classList.add('mole');
+    randomSquare.classList.add("mole");
 
     hitPosition = randomSquare.id;
 }
 
-squares.forEach(squ => {
-    squ.addEventListener('mousedown', () => {
+squares.forEach((squ) => {
+    squ.addEventListener("mousedown", () => {
         if (squ.id === hitPosition) {
             result++;
             scoreDisplay.textContent = result;
